@@ -8,8 +8,8 @@ import { Header } from '~/components/header';
 import { NavLinks } from '~/components/nav-links';
 
 export const metadata: Metadata = {
-  title: 'Blog | Yangshun Tay',
-  description: 'Blog posts by Yangshun Tay',
+  title: 'Blog | Nathaniel Abegunde',
+  description: 'Blog posts by Nathaniel Abegunde',
 };
 
 export default function BlogIndexPage() {

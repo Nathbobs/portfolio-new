@@ -1,11 +1,11 @@
 import { Header } from '~/components/header';
 import { LunchboxGrid } from '~/lunchbox/core/lunchbox-grid';
 import { LunchboxItemLinkGitHub } from '~/lunchbox/prebuilt/lunchbox-item-link-github';
-import { LunchboxItemLinkTwitter } from '~/lunchbox/prebuilt/lunchbox-item-link-twitter';
-import { LunchboxItemLinkFacebook } from '~/lunchbox/prebuilt/lunchbox-item-link-facebook';
-import { LunchboxItemLinkInstagram } from '~/lunchbox/prebuilt/lunchbox-item-link-instagram';
-import { NavLinks } from '~/components/nav-links';
 import { LunchboxItemLinkLinkedIn } from '~/lunchbox/prebuilt/lunchbox-item-link-linkedin';
+import { LunchboxItemLinkEmail } from '~/lunchbox/prebuilt/lunchbox-item-link-email';
+import { LunchboxItemLinkMedium } from '~/lunchbox/prebuilt/lunchbox-item-link-medium';
+import { LunchboxItemLinkKaggle } from '~/lunchbox/prebuilt/lunchbox-item-link-kaggle';
+import { NavLinks } from '~/components/nav-links';
 
 export default function HomePage() {
   return (
@@ -15,18 +15,28 @@ export default function HomePage() {
         <section className="grid gap-y-4">
           <h2 className="sr-only tracking-tight font-medium text-4xl">About</h2>
           <p className="text-zinc-600 max-w-lg text-pretty">
-            Full Front End Stack Engineer, experienced in building products,
-            design systems, and developer tooling.
+            I&apos;m Nathaniel, a Software Engineer (Data Engineer) based in
+            Seoul. I build data pipelines — from pulling in raw data to making
+            it useful. CS grad from Hanyang University (GKS Scholar).
           </p>
         </section>
         <section className="grid gap-y-6">
           <h2 className="tracking-tight font-medium text-xl">Find me online</h2>
           <LunchboxGrid>
-            <LunchboxItemLinkGitHub rows={1} cols={4} username="yangshun" />
-            <LunchboxItemLinkLinkedIn rows={1} cols={4} username="yangshun" />
-            <LunchboxItemLinkFacebook rows={2} cols={2} username="yangshun" />
-            <LunchboxItemLinkInstagram rows={2} cols={2} username="yangshun" />
-            <LunchboxItemLinkTwitter rows={1} cols={4} username="yangshun" />
+            <LunchboxItemLinkLinkedIn
+              rows={1}
+              cols={4}
+              username="abegundenathaniel"
+            />
+            <LunchboxItemLinkGitHub rows={2} cols={4} username="nathbobs" />
+            <LunchboxItemLinkEmail
+              rows={1}
+              cols={4}
+              email="aanathaniel@gmail.com"
+              subtitle="aanathaniel [at] gmail [dot] com"
+            />
+            <LunchboxItemLinkKaggle rows={1} cols={4} username="nathbob" />
+            <LunchboxItemLinkMedium rows={1} cols={4} username="nathbobs" />
           </LunchboxGrid>
         </section>
       </div>
