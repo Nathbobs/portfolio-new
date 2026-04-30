@@ -4,6 +4,7 @@ export type Props = Readonly<{
   className?: ClassValue;
   border?: boolean;
   children?: React.ReactNode;
+  freeHeight?: boolean;
 }> &
   Ratio;
 
@@ -22,6 +23,7 @@ export function LunchboxItem({
   border = true,
   children,
   className,
+  freeHeight = false,
   rows = 2,
   cols = 2,
 }: Props) {
@@ -34,11 +36,11 @@ export function LunchboxItem({
           'col-span-2': cols === 2,
           'col-span-4': cols === 4,
           'col-span-8': cols === 8,
-          'row-span-1': rows === 1,
-          'row-span-2': rows === 2,
-          'row-span-3': rows === 3,
-          'row-span-4': rows === 4,
-          'aspect-square': rows === cols,
+          'row-span-1': !freeHeight && rows === 1,
+          'row-span-2': !freeHeight && rows === 2,
+          'row-span-3': !freeHeight && rows === 3,
+          'row-span-4': !freeHeight && rows === 4,
+          'aspect-square': !freeHeight && rows === cols,
         },
         className,
       ]}

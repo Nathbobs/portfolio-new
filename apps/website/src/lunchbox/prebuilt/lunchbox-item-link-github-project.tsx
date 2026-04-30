@@ -5,7 +5,7 @@ import { Props as CellProps } from '../core/lunchbox-item';
 import { LunchboxIcon } from '../core/lunchbox-icon';
 import { LunchboxItemLink } from '../layouts/lunchbox-item-link';
 
-type Props = Pick<SelfProps, 'className' | 'image'> &
+type Props = Pick<SelfProps, 'className' | 'image' | 'padding' | 'actionSpacing'> &
   CellProps &
   Readonly<{
     title?: string;

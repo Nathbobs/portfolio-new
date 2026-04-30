@@ -10,6 +10,8 @@ export type SelfProps = Readonly<{
   icon: React.ReactElement;
   image?: React.ReactElement;
   action?: React.ReactElement;
+  padding?: string;
+  actionSpacing?: string;
 }>;
 
 export type Props = CellProps & SelfProps;
@@ -133,14 +135,18 @@ function LunchboxItemLink1x8({ action, icon, subtitle, title }: SelfProps) {
 
 function LunchboxItemLink2x8({
   action,
+  actionSpacing = 'mt-3',
   icon,
   image,
+  padding = 'p-6',
   subtitle,
   title,
 }: SelfProps) {
   return (
-    <div className="w-full flex h-full p-6 gap-4 justify-between items-stretch">
-      <div className="flex flex-col justify-between">
+    <div
+      className={`w-full flex ${padding} gap-4 items-stretch`}
+    >
+      <div className="flex flex-col flex-1">
         <div className="grid gap-2">
           {icon}
           <div className="flex flex-col">
@@ -148,7 +154,7 @@ function LunchboxItemLink2x8({
             <p className="text-xs text-zinc-500 max-w-lg">{subtitle}</p>
           </div>
         </div>
-        {action && <div className="mt-4">{action}</div>}
+        {action && <div className={actionSpacing}>{action}</div>}
       </div>
       {image && (
         <div className="flex items-center justify-end pr-4">{image}</div>
@@ -159,14 +165,18 @@ function LunchboxItemLink2x8({
 
 function LunchboxItemLink3x8({
   action,
+  actionSpacing = 'mt-4',
   icon,
   image,
+  padding = 'p-6',
   subtitle,
   title,
 }: SelfProps) {
   return (
-    <div className="w-full flex h-full p-6 gap-4 justify-between items-stretch">
-      <div className="flex flex-col justify-between">
+    <div
+      className={`w-full flex ${padding} gap-4 items-stretch`}
+    >
+      <div className="flex flex-col flex-1">
         <div className="grid gap-2">
           {icon}
           <div className="flex flex-col">
@@ -174,7 +184,7 @@ function LunchboxItemLink3x8({
             <p className="text-xs text-zinc-500 max-w-lg">{subtitle}</p>
           </div>
         </div>
-        {action && <div className="mt-4">{action}</div>}
+        {action && <div className={actionSpacing}>{action}</div>}
       </div>
       {image && (
         <div className="flex items-center justify-end pr-4">{image}</div>
@@ -184,14 +194,14 @@ function LunchboxItemLink3x8({
 }
 
 export function LunchboxItemLink(props: Props) {
-  const { className, cols, rows, ...rest } = props;
+  const { className, cols, rows, freeHeight, ...rest } = props;
 
   return (
     <LunchboxItem
       {...props}
       className={['bg-white hover:shadow-lg transition', className]}
     >
-      <div className="absolute inset-0 flex h-full w-full">
+      <div className={freeHeight ? 'relative flex w-full' : 'absolute inset-0 flex h-full w-full'}>
         {(() => {
           if (rows === 1 && cols === 4) {
             return <LunchboxItemLink1x4 {...rest} />;
