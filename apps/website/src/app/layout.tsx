@@ -4,9 +4,9 @@ import { Container } from '~/components/container';
 import { Footer } from '~/components/footer';
 
 export const metadata: Metadata = {
-  title: 'Yangshun Tay Homepage',
+  title: 'Nathaniel Abegunde',
   description:
-    'Full Front End Stack Engineer, experienced in building products, design systems, user experience, and developer tooling.',
+    'Software Engineer, experienced in building Data and Backend Systems.',
 };
 
 export default function RootLayout({

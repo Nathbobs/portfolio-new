@@ -1,36 +1,32 @@
-import {
-  BsGithub,
-  BsLinkedin,
-  BsTwitterX,
-  BsMedium,
-  BsStackOverflow,
-} from 'react-icons/bs';
+import { BsGithub, BsLinkedin, BsMedium } from 'react-icons/bs';
+import { MdEmail } from 'react-icons/md';
+import { SiKaggle } from 'react-icons/si';
 
 const internetProfiles = {
   github: {
     label: 'GitHub',
     icon: BsGithub,
-    href: 'https://github.com/yangshun',
+    href: 'https://github.com/nathbobs',
   },
   linkedin: {
     label: 'LinkedIn',
     icon: BsLinkedin,
-    href: 'https://linkedin.com/in/yangshun',
+    href: 'https://linkedin.com/in/abegundenathaniel',
   },
-  twitter: {
-    label: 'X',
-    icon: BsTwitterX,
-    href: 'https://x.com/yangshun',
-  },
-  stackoverflow: {
-    label: 'StackOverflow',
-    icon: BsStackOverflow,
-    href: 'https://stackoverflow.com/u/1751946',
+  email: {
+    label: 'Email',
+    icon: MdEmail,
+    href: 'mailto:aanathaniel@gmail.com',
   },
   medium: {
     label: 'Medium',
     icon: BsMedium,
-    href: 'https://medium.com/@yangshun',
+    href: 'https://medium.com/@nathbobs',
+  },
+  kaggle: {
+    label: 'Kaggle',
+    icon: SiKaggle,
+    href: 'https://www.kaggle.com/nathbob',
   },
 } as const;
 
