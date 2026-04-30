@@ -16,7 +16,7 @@ export default function HomePage() {
           <h2 className="sr-only tracking-tight font-medium text-4xl">About</h2>
           <p className="text-zinc-600 max-w-lg text-pretty">
             I&apos;m Nathaniel, a Software Engineer (Data Engineer) based in
-            Seoul. I build data pipelines — from pulling in raw data to making
+            Seoul. I build data pipelines, from pulling in raw data to making
             it useful. CS grad from Hanyang University (GKS Scholar).
           </p>
         </section>
