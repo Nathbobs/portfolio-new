@@ -6,7 +6,7 @@ import { LunchboxItem } from '../core/lunchbox-item';
 export type SelfProps = Readonly<{
   className?: ClassValue;
   title: string;
-  subtitle?: string;
+  subtitle?: React.ReactNode;
   icon: React.ReactElement;
   image?: React.ReactElement;
   action?: React.ReactElement;
@@ -116,6 +116,73 @@ function LunchboxItemLink4x4({
   );
 }
 
+function LunchboxItemLink1x8({ action, icon, subtitle, title }: SelfProps) {
+  return (
+    <div className="w-full flex h-full p-4 items-center justify-between gap-4">
+      <div className="flex items-center gap-3">
+        {icon}
+        <div>
+          <p className="text-sm font-medium">{title}</p>
+          <p className="text-xs text-zinc-500">{subtitle}</p>
+        </div>
+      </div>
+      {action && <div>{action}</div>}
+    </div>
+  );
+}
+
+function LunchboxItemLink2x8({
+  action,
+  icon,
+  image,
+  subtitle,
+  title,
+}: SelfProps) {
+  return (
+    <div className="w-full flex h-full p-6 gap-4 justify-between items-stretch">
+      <div className="flex flex-col justify-between">
+        <div className="grid gap-2">
+          {icon}
+          <div className="flex flex-col">
+            <p className="text-sm font-medium">{title}</p>
+            <p className="text-xs text-zinc-500 max-w-lg">{subtitle}</p>
+          </div>
+        </div>
+        {action && <div className="mt-4">{action}</div>}
+      </div>
+      {image && (
+        <div className="flex items-center justify-end pr-4">{image}</div>
+      )}
+    </div>
+  );
+}
+
+function LunchboxItemLink3x8({
+  action,
+  icon,
+  image,
+  subtitle,
+  title,
+}: SelfProps) {
+  return (
+    <div className="w-full flex h-full p-6 gap-4 justify-between items-stretch">
+      <div className="flex flex-col justify-between">
+        <div className="grid gap-2">
+          {icon}
+          <div className="flex flex-col">
+            <p className="text-sm font-medium">{title}</p>
+            <p className="text-xs text-zinc-500 max-w-lg">{subtitle}</p>
+          </div>
+        </div>
+        {action && <div className="mt-4">{action}</div>}
+      </div>
+      {image && (
+        <div className="flex items-center justify-end pr-4">{image}</div>
+      )}
+    </div>
+  );
+}
+
 export function LunchboxItemLink(props: Props) {
   const { className, cols, rows, ...rest } = props;
 
@@ -130,12 +197,24 @@ export function LunchboxItemLink(props: Props) {
             return <LunchboxItemLink1x4 {...rest} />;
           }
 
+          if (rows === 1 && cols === 8) {
+            return <LunchboxItemLink1x8 {...rest} />;
+          }
+
           if (rows === 2 && cols === 2) {
             return <LunchboxItemLink2x2 {...rest} />;
           }
 
           if (rows === 2 && cols === 4) {
             return <LunchboxItemLink2x4 {...rest} />;
+          }
+
+          if (rows === 2 && cols === 8) {
+            return <LunchboxItemLink2x8 {...rest} />;
+          }
+
+          if (rows === 3 && cols === 8) {
+            return <LunchboxItemLink3x8 {...rest} />;
           }
 
           if (rows === 4 && cols === 2) {
