@@ -6,7 +6,7 @@ export function Footer() {
       <hr />
       <div className="flex gap-x-12 justify-between">
         <span className="text-sm text-zinc-600">
-          {new Date().getFullYear()} © Yangshun Tay
+          {new Date().getFullYear()} © Nathaniel Abegunde
         </span>
         <ProfileLinks />
       </div>

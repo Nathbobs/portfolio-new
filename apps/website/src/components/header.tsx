@@ -8,7 +8,7 @@ export function Header({ rightContents }: Props) {
   return (
     <div className="flex justify-between pb-8 items-end">
       <Link className="font-medium tracking-tight text-2xl" href="/">
-        Yangshun Tay
+        Nathaniel Abegunde
       </Link>
       {rightContents}
     </div>
